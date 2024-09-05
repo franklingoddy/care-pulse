@@ -30,6 +30,7 @@ interface CustomProps {
   children?: React.ReactNode;
   renderSkeleton?: (field: any) => React.ReactNode;
 }
+type E164Number = string;
 
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
   const { fieldType, placeholder, iconSrc, iconAlt } = props;
@@ -87,7 +88,6 @@ const CustomFormField = (props: CustomProps) => {
             {fieldType !== FormFieldType.CHECKBOX && label && (
               <FormLabel>{label}</FormLabel>
             )}
-
             <RenderField field={field} props={props} />
             <FormMessage className="shad-error" />
           </FormItem>
